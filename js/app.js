@@ -93,3 +93,17 @@ function initMap() {
       title: "STRICTUS ul. Handlowa 7/20, 15-399 Białystok",
   });
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+  const cookieBar = document.getElementById("cookie-bar");
+  const acceptBtn = document.getElementById("cookie-accept");
+
+  if (!localStorage.getItem("cookiesAccepted")) {
+    cookieBar.style.display = "block";
+  }
+
+  acceptBtn.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieBar.style.display = "none";
+  });
+});
